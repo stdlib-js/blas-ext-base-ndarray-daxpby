@@ -58,7 +58,7 @@ This BLAS extension implements the operation
 ## Usage
 
 ```javascript
-import daxpby from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-daxpby@esm/index.mjs';
+import daxpby from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-daxpby@v0.0.0-esm/index.mjs';
 ```
 
 #### daxpby( arrays )
@@ -123,7 +123,7 @@ import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-discre
 import scalar2ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-from-scalar@esm/index.mjs';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
 import ndarraylike2scalar from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ndarraylike2scalar@esm/index.mjs';
-import daxpby from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-daxpby@esm/index.mjs';
+import daxpby from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-ndarray-daxpby@v0.0.0-esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'
