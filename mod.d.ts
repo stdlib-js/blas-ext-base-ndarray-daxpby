@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,19 +16,11 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
 
-var numelDimension = require( '@stdlib/ndarray-base-numel-dimension' );
-var getStride = require( '@stdlib/ndarray-base-stride' );
-var getOffset = require( '@stdlib/ndarray-base-offset' );
-var getData = require( '@stdlib/ndarray-base-data-buffer' );
-var strided = require( '@stdlib/blas-ext-base-daxpby' ).ndarray;
-var ndarraylike2scalar = require( '@stdlib/ndarray-base-ndarraylike2scalar' );
-
-
-// MAIN //
+import { float64ndarray, typedndarray } from '@stdlib/types/ndarray';
 
 /**
 * Multiplies a one-dimensional double-precision floating-point ndarray by a scalar constant and adds the result to a second one-dimensional double-precision floating-point ndarray multiplied by a scalar constant.
@@ -39,11 +31,11 @@ var ndarraylike2scalar = require( '@stdlib/ndarray-base-ndarraylike2scalar' );
 *
 *     -   a one-dimensional input ndarray.
 *     -   a one-dimensional output ndarray.
-*     -   a zero-dimensional ndarray containing the constant by which to multiply the input ndarray.
-*     -   a zero-dimensional ndarray containing the constant by which to multiply the output ndarray.
+*     -   a zero-dimensional ndarray containing the scalar constant by which to multiply the input ndarray.
+*     -   a zero-dimensional ndarray containing the scalar constant by which to multiply the output ndarray.
 *
-* @param {ArrayLikeObject<Object>} arrays - array-like object containing ndarrays
-* @returns {ndarray} output ndarray
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
@@ -63,21 +55,9 @@ var ndarraylike2scalar = require( '@stdlib/ndarray-base-ndarraylike2scalar' );
 * var out = daxpby( [ x, y, alpha, beta ] );
 * // returns <ndarray>[ 9.0, 16.0, 23.0, 30.0, 37.0 ]
 */
-function daxpby( arrays ) {
-	var alpha;
-	var beta;
-	var x;
-	var y;
-
-	x = arrays[ 0 ];
-	y = arrays[ 1 ];
-	alpha = ndarraylike2scalar( arrays[ 2 ] );
-	beta = ndarraylike2scalar( arrays[ 3 ] );
-	strided( numelDimension( x, 0 ), alpha, getData( x ), getStride( x, 0 ), getOffset( x ), beta, getData( y ), getStride( y, 0 ), getOffset( y ) ); // eslint-disable-line max-len
-	return y;
-}
+declare function daxpby( arrays: [ float64ndarray, float64ndarray, typedndarray<number>, typedndarray<number> ] ): float64ndarray;
 
 
 // EXPORTS //
 
-module.exports = daxpby;
+export = daxpby;
